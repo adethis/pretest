@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap');
+
 body {
-  background-color: #2D3B48;
+  background-image: url(http://i.imgur.com/O7ZWigt.png);
   padding: 20px;
   margin: 0;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 .title {
   color: white;
@@ -15,8 +18,9 @@ ul.header li {
   margin: 0;
 }
 ul.header {
-  background-color: #24CED0;
+  background-color: #24D081;
   padding: 0;
+  border-radius: 30px;
 }
 ul.header li a {
   color: #FFF;
@@ -26,7 +30,7 @@ ul.header li a {
   display: inline-block;
 }
 .content {
-  background-color: #FFF;
+  background-color: transparent;
   padding: 20px;
 }
 .content h2 {
@@ -39,13 +43,14 @@ ul.header li a {
 
 .boxWhite {
   height: 700px;
-  background: white;
+  background: transparent;
 }
 .bgCircle {
   border-radius: 50%;
   width: 230px;
   height: 230px;
-  background-color: #24CED0;
+  background-image: url(https://banner2.kisspng.com/20180609/xzg/kisspng-pok-ball-pokmon-clip-art-pokemon-ball-gym-teams-5b1bf9764710c1.9958688915285599902911.jpg);
+  background-size: 250px 265px;
   color: white;
   padding-left: 10px;
   padding-right: 10px;
@@ -61,5 +66,6 @@ ul.header li a {
   border-radius: 50%;
 }
 .ctr {
+  font-size: 24px;
   text-align: center;
 }

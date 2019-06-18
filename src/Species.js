@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-class Turkey extends Component {
+class Species extends Component {
 
   constructor(props) {
     super(props);
@@ -11,15 +11,11 @@ class Turkey extends Component {
   }
 
   componentDidMount() {
-      fetch("https://randomuser.me/api/?results=10&nat=tr")
+      fetch("https://pokeapi.co/api/v2/pokemon-species/?offset=6&limit=6")
         .then(res => res.json())
         .then(parsedJSON => parsedJSON.results.map(data => (
           {
-            id: `${data.id.name}`,
-            firstName: `${data.name.first}`,
-            lastName: `${data.name.last}`,
-            location: `${data.location.state}, ${data.nat}`,
-            thumbnail: `${data.picture.large}`,
+            firstName: `${data.name}`
 
           }
         )))
@@ -34,17 +30,16 @@ class Turkey extends Component {
       const {items } = this.state;
         return (
           <div className="boxWhite">
-            <h2>Random User</h2>
+            <h2>Species</h2>
             {
               items.length > 0 ? items.map(item => {
-              const {id, firstName, lastName, location, thumbnail} = item;
+              const {firstName} = item;
                return (
 
-               <div key={id} className="bgCircle">
-               <center><img src={thumbnail} alt={firstName} className="circle"/> </center><br />
+               <div className="bgCircle">
+               <center></center><br />
                <div className="ctr">
-                  {firstName} {lastName}<br />
-                  {location}
+                  {firstName}<br />
                 </div>
 
               </div>
@@ -57,4 +52,4 @@ class Turkey extends Component {
     }
   }
 
-export default Turkey;
+export default Species;

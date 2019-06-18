@@ -11,15 +11,11 @@ class Home extends Component {
   }
 
   componentDidMount() {
-      fetch("https://randomuser.me/api/?results=10")
+      fetch("https://pokeapi.co/api/v2/pokemon/?limit=6&offset=6")
         .then(res => res.json())
         .then(parsedJSON => parsedJSON.results.map(data => (
           {
-            id: `${data.id.name}`,
-            firstName: `${data.name.first}`,
-            lastName: `${data.name.last}`,
-            location: `${data.location.state}, ${data.nat}`,
-            thumbnail: `${data.picture.large}`,
+            firstName: `${data.name}`
 
           }
         )))
@@ -34,17 +30,16 @@ class Home extends Component {
       const {items } = this.state;
         return (
           <div className="boxWhite">
-            <h2>Random User</h2>
+            <h2>Pokemon</h2>
             {
               items.length > 0 ? items.map(item => {
-              const {id, firstName, lastName, location, thumbnail} = item;
+              const {firstName} = item;
                return (
 
-               <div key={id} className="bgCircle">
-               <center><img src={thumbnail} alt={firstName} className="circle"/> </center><br />
+               <div className="bgCircle">
+               <center></center><br />
                <div className="ctr">
-                  {firstName} {lastName}<br />
-                  {location}
+                  {firstName}
                 </div>
 
               </div>
